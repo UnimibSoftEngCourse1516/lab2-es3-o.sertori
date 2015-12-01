@@ -11,6 +11,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertGreaterThan;
 import static org.junit.Assert.expectThrows;
 import static org.junit.Assert.fail;
 
@@ -260,6 +261,17 @@ public class AssertionTest {
         Object[] objects1 = new Object[]{element};
         Object[] objects2 = new Object[]{element};
         assertArrayEquals(objects1, objects2);
+    }
+    
+    @Test
+    public void testGreaterThanPrimitives() {
+        double d1 = 20, d2 = 10;
+        int i1 = 20, i2 = 10;
+        char c1 = 'b', c2 = 'a';
+        
+        assertGreaterThan(d1, d2);
+        assertGreaterThan(i1, i2);
+        assertGreaterThan(c1, c2);
     }
 
     @Test

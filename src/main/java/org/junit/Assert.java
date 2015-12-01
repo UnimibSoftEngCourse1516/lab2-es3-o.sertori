@@ -119,6 +119,67 @@ public class Assert {
             failNotEquals(message, expected, actual);
         }
     }
+    
+    /**
+     * Asserts that the first object is greater than the second object.
+     * If it is not, an {@link AssertionError} is thrown.
+     * 
+     * @param o1 first object to be compared
+     * @param o2 second object to be compared.
+     */
+    public static void assertGreaterThan(int o1, int o2) {
+        Integer i1 = new Integer(o1);
+        Integer i2 = new Integer(o2);
+        if (i1.compareTo(i2) <= 0) {
+            fail("Error in assertGreaterThan!");
+        }
+    }
+
+    /**
+     * Asserts that the first object is greater than the second object.
+     * If it is not, an {@link AssertionError} is thrown.
+     * 
+     * @param o1 first object to be compared
+     * @param o2 second object to be compared.
+     */
+    public static void assertGreaterThan(char o1, char o2) {
+        Character c1 = new Character(o1);
+        Character c2 = new Character(o2);
+        if (c1.compareTo(c2) <= 0) {
+            fail("Error in assertGreaterThan!");
+        }
+    }
+
+    /**
+     * Asserts that the first object is greater than the second object.
+     * If it is not, an {@link AssertionError} is thrown.
+     * 
+     * @param o1 first object to be compared
+     * @param o2 second object to be compared.
+     */
+    public static void assertGreaterThan(double o1, double o2) {
+        Double c1 = new Double(o1);
+        Double c2 = new Double(o2);
+        if (c1.compareTo(c2) <= 0) {
+            fail("Error in assertGreaterThan!");
+        }
+    }
+    
+
+    /**
+     * Asserts that the first object is greater than the second object.
+     * If it is not, an {@link AssertionError} is thrown.
+     * 
+     * @param o1 first object to be compared
+     * @param o2 second object to be compared.
+     */
+    public static void assertGreaterThan(float o1, float o2) {
+        Float c1 = new Float(o1);
+        Float c2 = new Float(o2);
+        if (c1.compareTo(c2) <= 0) {
+            fail("Error in assertGreaterThan!");
+        }
+    }
 
     private static boolean equalsRegardingNull(Object expected, Object actual) {
         if (expected == null) {
