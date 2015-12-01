@@ -11,11 +11,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertGreaterThan;
 import static org.junit.Assert.expectThrows;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.Assert.ThrowingRunnable;
@@ -139,6 +141,20 @@ public class AssertionTest {
             assertEquals("message: arrays first differed at element [1]; expected:<true> but was:<false>", exception.getMessage());
         }
     }
+
+    @Test
+    public void firstObjectIsGreaterThanSecondOne() {
+        Integer a = new Integer(2);
+        Integer b = new Integer(1);
+        Comparator<Integer> c = new Comparator<Integer>() {
+            public int compare(Integer o1, Integer o2) {
+                return o1.compareTo(o2);
+            }
+        };
+        
+        assertGreaterThan(a, b, c);
+    }
+    
 
     @Test
     public void multiDimensionalArraysAreEqual() {
@@ -617,6 +633,7 @@ public class AssertionTest {
         assertNotEquals(new Object(), new Object());
     }
 
+    
     @Test
     public void assertNotEqualsIncludesCorrectMessage() {
         Integer value1 = new Integer(1);
